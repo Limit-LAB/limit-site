@@ -8,18 +8,18 @@ export interface ChildProp {
 
 type Empty = Record<string, never>
 
-export const defineFC = <P = Empty>(
-  comp: React.FunctionComponent<P & Required<BaseProp>>
-) => (prop: P & BaseProp) => {
-  const className = prop.className ?? ''
-  return comp({ ...prop, className })
-}
+export const defineVFC =
+  <P = Empty>(comp: React.FunctionComponent<P & Required<BaseProp>>) =>
+  (prop: P & BaseProp) => {
+    const className = prop.className ?? ''
+    return comp({ ...prop, className })
+  }
 
-export const defineFCWithChild = <P = ChildProp>(
+export const defineVFCWithChild = <P = ChildProp>(
   comp: React.FunctionComponent<ChildProp & P & Required<BaseProp>>
-) => defineFC<ChildProp & P>(comp)
+) => defineVFC<ChildProp & P>(comp)
 
-export const defineFCWithClassAndChild = <P = BaseProp>(
+export const defineVFCWithClassAndChild = <P = BaseProp>(
   comp: React.FunctionComponent<{ children: React.ReactNode } & BaseProp & P>
 ) => comp
 

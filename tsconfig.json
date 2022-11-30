@@ -26,6 +26,9 @@
       "@comps/*": [
         "components/*"
       ],
+      "@public/*": [
+        "public/*"
+      ],
     }
   },
   "include": [
