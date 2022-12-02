@@ -33,8 +33,8 @@ export default defineConfig({
         'nav-hover': 'rgba(0,0,0,.2) 0 10px 15px'
       },
       colors: {
-        primary: '#1363DF',
-        background: '#f5f5f4',
+        primary: '#006E7F',
+        background: '#EEEEEE',
         gray: '#868B8E'
       }
     }

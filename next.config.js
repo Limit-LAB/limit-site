@@ -6,6 +6,9 @@ const nextConfig = {
   swcMinify: true,
   compress: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  images: {
+    domains: ['placekitten.com']
+  },
   webpack(config) {
     config.plugins.push(new WindiCSSWebpackPlugin())
     return config
