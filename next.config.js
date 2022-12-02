@@ -1,4 +1,4 @@
-const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
+import WindiCSSWebpackPlugin from 'windicss-webpack-plugin'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -12,4 +12,4 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig
+export default nextConfig
