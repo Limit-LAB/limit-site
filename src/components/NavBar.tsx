@@ -1,7 +1,7 @@
 import { defineVFC } from '@core/helper'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
-import { useFocusTrap, useScrollLock } from '@mantine/hooks'
+import { useScrollLock } from '@mantine/hooks'
 
 const className = 'cursor-pointer sm:hidden hover:text-neutral-600 z-10'
 
@@ -14,7 +14,6 @@ const navs = {
 
 const NavBar = defineVFC(() => {
   const [showMenu, setShowMenu] = useScrollLock(false)
-  const trapRef = useFocusTrap(showMenu)
 
   const openBtn = showMenu ? (
     <Icon
@@ -42,7 +41,6 @@ const NavBar = defineVFC(() => {
       <sm:(h-full fixed z-1 top-14 left-0 w-0 overflow-x-hidden bg-background flex flex-col pt-4 text-4xl)
       sm:(space-x-2 text-neutral-600)
       ${showMenu ? '<sm:(w-full px-8)' : ''}`}
-      ref={trapRef}
     >
       {Object.entries(navs).map(([name, path]) => (
         <nav key={name}>

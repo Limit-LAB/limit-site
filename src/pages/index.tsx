@@ -27,14 +27,9 @@ const IndexPage = definePage(() => {
         id.
       </p>
       <div className="flex  sm:(space-x-2) <sm:(space-x-2) ">
-        <Button
-          className="<sm:(flex-grow)"
-          text="Try web"
-          icon="material-symbols:arrow-right-alt"
-        />
+        <Button text="Try web" icon="material-symbols:arrow-right-alt" />
 
         <Button
-          className="<sm:(flex-grow)"
           text="Getting started"
           icon="material-symbols:arrow-right-alt"
           href="/user"
@@ -43,7 +38,7 @@ const IndexPage = definePage(() => {
 
       <div className="mt-36 sm:mt-48">
         <h2 className="font-bold text-3xl sm:mb-18 <sm:mb-12">Why LIMIT?</h2>
-        <div className="flex flex-col space-y-12">
+        <div className="md:(grid grid-cols-3) <md:(flex flex-col space-y-8) ">
           <Description
             icon="mdi:eye-lock-outline"
             title="Truly encrypted"
