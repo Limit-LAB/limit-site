@@ -7,7 +7,8 @@ const nextConfig = {
   compress: true,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
   images: {
-    domains: ['placekitten.com']
+    domains: ['placekitten.com'],
+    unoptimized: true
   },
   webpack(config) {
     config.plugins.push(new WindiCSSWebpackPlugin())
