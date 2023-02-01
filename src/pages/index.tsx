@@ -19,21 +19,20 @@ const Description = defineVFC<{
 const IndexPage = definePage(() => {
   return (
     <>
-      <h1 className="font-extrabold my-6 text-5xl">The future of chatting</h1>
+      <h1 className="font-extrabold my-6 <md:text-6xl md:text-8xl ">The future of chatting</h1>
       <p>
         Incididunt consequat deserunt irure nostrud elit consectetur eiusmod
         proident do sint reprehenderit ad dolore exercitation. Reprehenderit
         enim occaecat deserunt eiusmod tempor adipisicing adipisicing deserunt
         id.
       </p>
-      <div className="flex  sm:(space-x-2) <sm:(space-x-2) ">
-        <Button text="Try web" icon="material-symbols:arrow-right-alt" />
-
+      <div className="flex sm:(space-x-2) <sm:(space-x-2) ">
         <Button
           text="Getting started"
           icon="material-symbols:arrow-right-alt"
           href="/user"
         />
+        <Button text="Try web" icon="material-symbols:arrow-right-alt" />
       </div>
 
       <div className="mt-36 sm:mt-48">
