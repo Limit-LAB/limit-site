@@ -60,7 +60,7 @@ const NavBar = defineVFC(() => {
     <header
       className="bg-background flex font-display h-14 w-full p-8
       z-10 justify-between items-center
-      fixed
+      fixed max-w-screen-lg
       sm:(p-10 h-28) md:p-14 "
     >
       <Link className="font-bold" href="/" onClick={() => setShowMenu(false)}>
