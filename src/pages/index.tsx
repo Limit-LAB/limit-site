@@ -26,13 +26,13 @@ const IndexPage = definePage(() => {
         enim occaecat deserunt eiusmod tempor adipisicing adipisicing deserunt
         id.
       </p>
-      <div className="flex sm:(space-x-2) <sm:(space-x-2) ">
+      <div className="flex sm:(space-x-4) <sm:(space-x-4) ">
         <Button
           text="Getting started"
           icon="material-symbols:arrow-right-alt"
           href="/user"
         />
-        <Button text="Try web" icon="material-symbols:arrow-right-alt" />
+        <Button text="Try web" icon="material-symbols:arrow-right-alt" variant='text' />
       </div>
 
       <div className="mt-36 sm:mt-48">
