@@ -2,6 +2,8 @@ import { defineVFC } from '@core/helper'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import { useScrollLock } from '@mantine/hooks'
+import Image from 'next/image'
+import ImgLimitLabLogo from '../public/limit-lab-log.svg'
 
 const className = 'cursor-pointer sm:hidden hover:text-neutral-600 z-10'
 
@@ -64,8 +66,10 @@ const NavBar = defineVFC(() => {
       sm:(p-8 h-16) md:(h-24 px-18)
       "
     >
-      <Link className="font-bold" href="/" onClick={() => setShowMenu(false)}>
-        LIMIT IM
+      <Link className="font-bold flex flex-row items-center -ml-3" href="/" onClick={() => setShowMenu(false)} >
+        <Image src={ImgLimitLabLogo} alt="logo" width={40} height={40} />
+        <span className="font-light"> / </span>
+        <span className="text-xl ml-1 md:(text-2xl ml-2)"> LIMIT IM</span>
       </Link>
       {openBtn}
       {menu}
