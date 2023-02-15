@@ -25,11 +25,11 @@ const Button = defineVFC<{
   onClick?: MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>
 }>(({ children, variant, className: extClassName, href, icon, text, onClick }) => {
   const className = `${buttonBaseStyleNormal} ${buttonStyle[variant || 'primary']}`
-  const buttonChildren: React.ReactNode[] = [
-    children ? children : <span>{text}</span>,
-    icon && typeof icon == 'string' && <Icon inline icon={icon} width={18} className="ml-2" />,
-    icon && typeof icon != 'string' && icon
-  ]
+  const buttonChildren = <>
+    {children ? children : text}
+    {icon && typeof icon == 'string' && <Icon inline icon={icon} width={18} className="ml-2" />}
+    {icon && typeof icon != 'string' && icon}
+  </>
   return href
     ? <Link onClick={onClick} href={href} className={`${className} ${extClassName}`} >{buttonChildren}</Link>
     : <button onClick={onClick} className={`${className} ${extClassName}`}>{buttonChildren}</button>
