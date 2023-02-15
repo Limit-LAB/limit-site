@@ -7,7 +7,7 @@ import type { MouseEventHandler } from 'react'
 type Variant = 'primary' | 'secondary' | 'text'
 
 const buttonBaseStyleNormal = `
-  p-3 align-middle cursor-pointer flex items-center font-display font-bold transition border-2 border-solid rounded
+  p-3 align-middle cursor-pointer flex items-center font-display font-bold transition border-2 border-solid rounded-2xl
 `
 
 const buttonStyle = {
