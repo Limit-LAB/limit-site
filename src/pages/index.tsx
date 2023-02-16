@@ -30,18 +30,25 @@ const IndexPage = definePage(() => {
         The <span style={TitleGradientStyle}>future</span> of chatting
       </h1>
       <p>
-        Incididunt consequat deserunt irure nostrud elit consectetur eiusmod
-        proident do sint reprehenderit ad dolore exercitation. Reprehenderit
-        enim occaecat deserunt eiusmod tempor adipisicing adipisicing deserunt
-        id.
+        We are well versed in distributed systems, committed to <span className='underline'>breaking through traditional social <span className="text-black">limit</span>ations and
+          sparking new change through decentralisation & Web3.</span>
       </p>
       <div className="flex sm:(space-x-4) <sm:(space-x-4) ">
-        <Button
-          text="Getting started"
-          icon="material-symbols:arrow-right-alt"
-          href="/user"
-        />
-        <Button text="Try web" icon="material-symbols:arrow-right-alt" variant='text' />
+        <div className='rounded-full bg-light relative w-46'>
+          <Button
+            text="Getting started"
+            icon="material-symbols:arrow-top-right"
+            href="/user"
+            variant="base"
+            className={"bg-primary text-white h-full absolute bottom-0 left-0 " +
+              "transform delay-100 ease-linear duration-150 hover:translate-x-1 " +
+              "hover:bg-light"}
+          />
+        </div>
+        <Button variant="text" className="group" href="https://github.com/Limit-LAB">
+          <span className="-ml-1 bg-background transform translate-x-6 duration-150 ease-linear hover:(bg-none) group-hover:translate-x-2">know our lab</span>
+          <Icon inline icon={"material-symbols:arrow-right-alt"} width={18} className="ml-2" />
+        </Button>
       </div>
 
       <div className="mt-36 sm:mt-48">
