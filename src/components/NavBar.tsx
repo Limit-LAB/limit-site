@@ -41,10 +41,10 @@ const NavBar = defineVFC(() => {
     <div
       className={`flex font-display font-semibold transition-all
       <sm:(h-full fixed z-1 top-14 left-0 w-0 overflow-x-hidden bg-background flex flex-col pt-4 text-4xl)
-      sm:(space-x-2 text-neutral-600)
-      ${showMenu ? '<sm:(w-full px-8)' : ''}`}
+      sm:(space-x-2 text-neutral-600) 
+      ${showMenu ? '<sm:(w-full px-8 absolute bottom-0 left-0 h-screen) ' : ''}`}
     >
-      {Object.entries(navs).map(([name, path]) => (
+      {Object.entries(navs).map(([name, path],) => (
         <nav key={name}>
           <Link
             className="text-inherit p-2 transition block hover:text-primary"
@@ -61,7 +61,7 @@ const NavBar = defineVFC(() => {
   return (
     <header
       className="bg-background flex font-display h-8 w-full px-6 pt-8
-      z-10 justify-between items-center backdrop-blur-md bg-background/50
+      z-10 justify-between items-center backdrop-blur-md bg-background/30
       border border-2 border-solid border-background/90
       fixed max-w-screen-lg backdrop-blur
       sm:(p-8 h-16) md:(h-24 px-18)
