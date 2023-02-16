@@ -29,12 +29,12 @@ const IndexPage = definePage(() => {
       <h1 className="font-extrabold my-6 <md:text-6xl md:text-8xl ">
         The <span style={TitleGradientStyle}>future</span> of chatting
       </h1>
-      <p>
-        We are well versed in distributed systems, committed to <span className='underline'>breaking through traditional social <span className="text-black">limit</span>ations and
-          sparking new change through decentralisation & Web3.</span>
+      <p className="leading-normal">
+        We are well versed in distributed systems, committed to <span className="underline">breaking through traditional social <span className="text-black">limit</span>ations and
+        sparking new change through decentralisation & Web3.</span>
       </p>
       <div className="flex sm:(space-x-4) <sm:(space-x-4) ">
-        <div className='rounded-full bg-light relative w-46'>
+        <div className="rounded-full bg-light relative w-46">
           <Button
             text="Getting started"
             icon="material-symbols:arrow-top-right"
