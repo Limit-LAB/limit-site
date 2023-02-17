@@ -60,8 +60,8 @@ const NavBar = defineVFC(() => {
 
   return (
     <header
-      className="bg-background flex font-display h-8 w-full px-6 pt-8
-      z-10 justify-between items-center backdrop-blur-md bg-background/30
+      className="bg-background flex font-display w-full px-6 py-4
+      z-50 justify-between items-center backdrop-blur-md bg-background/30
       border border-2 border-solid border-background/90
       fixed max-w-screen-lg backdrop-blur
       sm:(p-8 h-16) md:(h-24 px-18)
