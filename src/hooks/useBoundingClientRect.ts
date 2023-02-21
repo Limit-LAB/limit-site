@@ -1,8 +1,7 @@
-import type { LegacyRef } from "react";
 import { useState, useRef, useEffect, useCallback } from "react";
 
 export function useBoundingClientRect() {
-  const [rect, setRect] = useState<DOMRectReadOnly>(null);
+  const [rect, setRect] = useState<DOMRectReadOnly>();
   const ref = useRef<HTMLElement>(null);
 
   const handleResize = useCallback(() => {
