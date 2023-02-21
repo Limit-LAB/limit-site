@@ -60,20 +60,20 @@ const NavBar = defineVFC(() => {
 
   return (
     <header
-      className="bg-background flex font-display w-full px-6 py-4
-      z-50 justify-between items-center backdrop-blur-md bg-background/30
-      border border-2 border-solid border-background/90
-      fixed max-w-screen-lg backdrop-blur
-      sm:(p-8 h-16) md:(h-24 px-18)
-      "
-    >
-      <Link className="font-bold flex flex-row items-center -ml-3" href="/" onClick={() => setShowMenu(false)} >
-        <Image src={ImgLimitLabLogo} alt="logo" width={40} height={40} />
-        <span className="font-light"> / </span>
-        <span className="text-xl ml-1 md:(text-2xl ml-2)"> LIMIT IM</span>
-      </Link>
-      {openBtn}
-      {menu}
+      className="font-display w-full px-6 py-4
+      backdrop-blur-md bg-background/30 border-background/90 backdrop-blur bg-background  
+      border border-2 border-solid z-50
+      fixed sm:(p-8 h-16) md:(h-24 px-18)"
+    ><div className="flex  justify-between items-center max-w-screen-lg mx-auto">
+        <Link className="font-bold flex flex-row items-center -ml-3" href="/" onClick={() => setShowMenu(false)} >
+          <Image src={ImgLimitLabLogo} alt="logo" width={40} height={40} />
+          <span className="font-light"> / </span>
+          <span className="text-xl ml-1 md:(text-2xl ml-2)"> LIMIT IM</span>
+        </Link>
+        {openBtn}
+        {menu}
+      </div>
+
     </header>
   )
 })
