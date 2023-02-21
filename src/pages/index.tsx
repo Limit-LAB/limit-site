@@ -21,7 +21,7 @@ const IndexPage = definePage(() => {
 
   const scrollY = useScrollPosition(60)
 
-  const { height: windowHeight } = useWindowSize()
+  const { height: windowHeight, width: windowWidth } = useWindowSize()
   const [rocketInitScrollY, setRocketInitScrollY] = useState<number | undefined>()
   const [rocketPosition, setRocketPosition] = useState(0)
 
@@ -82,8 +82,8 @@ const IndexPage = definePage(() => {
           <div className="flex h-24 rounded-3xl flex-row items-center justify-around relative z-10" style={{ background: "linear-gradient(188.88deg, #0080FB 6.75%, #153CA9 124.65%)" }}>
             {showRocket ? <p className="text-8xl md:text-10xl absolute z-50" style={
               {
-                left: rocketPosition || 0,
-                bottom: rocketPosition || 0,
+                left: rocketPosition + (windowWidth < 450 ? 50 : 0) || 0,
+                bottom: rocketPosition + (windowWidth < 450 ? 50 : 0) || 0,
                 opacity: (rocketPosition > 100) ? ((200 - rocketPosition) / 100) : 1
               }
             }>
@@ -97,29 +97,33 @@ const IndexPage = definePage(() => {
         </div>
         <h2 className="mt-40 md:mt-60 font-bold text-3xl text-center">Constituents</h2>
         <p className="text-center mt-4">A secure system consists of these features, protocols, and functions.</p>
-        <div className="  md:h-80 rounded-3xl md:mb-0 shadow shadow-xl group bg-white overflow-hidden hover:cursor-pointer flex flex-col md:flex-row justify-between items-center" >
-          <div className="p-10">
+        <div className="overflow-hidden md:(h-80 mb-0) rounded-3xl md: shadow shadow-xl group bg-white  hover:cursor-pointer flex flex-col md:flex-row justify-between items-center" >
+          <div className="p-10 ">
             <h3 className="text-4xl">Orkas</h3>
             <p className="leading-normal mt-4">
               Decentralized MQ implementation with SWIM and CRDT, the core building blocks of decentralized social services.
             </p>
             <Button text="Github Repo" variant="primary" className="group-hover:(bg-background text-primary)" />
           </div>
-          <Image src={ImgOrca} alt="orca" height={350}
-            className="transform transition ease-out delay-75 group-hover:-translate-y-1 group-hover:scale-110 duration-500 opacity-80" />
+          <div className="overflow-hidden rounded-b-3xl group-hover:rounded-b-3xl">
+            <Image src={ImgOrca} alt="orca" height={350}
+              className="transform transition ease-out delay-75 group-hover:-translate-y-1 group-hover:(scale-110 rounded-b-3xl) duration-500 opacity-80 rounded-b-3xl" />
+          </div>
         </div>
         {/* blocks for features description  */}
         <div className="md:flex space-x-0 md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-20">
           <div className="w-full">
-            <div className="relative flex flex-row-reverse bg-black h-90 mt-2 rounded-3xl w-full overflow-hidden group hover:cursor-pointer">
+            <div className="relative flex flex-row-reverse bg-black h-90 mt-2  w-full group hover:cursor-pointer rounded-3xl overflow-hidden">
               <div className="p-10 absolute left-0 z-30 text-white ">
                 <h3 className="text-3xl md:text-4xl">Decentralization</h3>
                 <p className="leading-normal mt-4 text-white">
                   In addition to chat, there are DAOs, smart contracts. Total and Web3 applications, everything!
                 </p>
               </div>
-              <Image src={ImgDecent} alt="orca" height={400}
-                className="rounded-3xl transform transition ease-out delay-75 group-hover:scale-110 duration-500 opacity-30 " />
+              <div className="rounded-3xl overflow-hidden w-auto h-auto">
+                <Image src={ImgDecent} alt="decentralization" height={400}
+                  className="rounded-full md:rounded-3xl transform transition ease-out delay-75 group-hover:scale-110 duration-500 opacity-30 " />
+              </div>
             </div>
           </div>
 
