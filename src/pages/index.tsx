@@ -1,12 +1,14 @@
 import Button from '@comps/Button'
 import { definePage } from '@core/helper'
 import { Icon } from '@iconify/react'
+import type { LegacyRef } from 'react';
 import { useEffect, useState } from 'react'
 import useScrollPosition from '@react-hook/window-scroll'
 import { useWindowSize } from '../hooks/useWindowSize'
 import ImgOrca from '../public/orca.jpg'
 import ImgDecent from '../public/decentralized.jpg'
 import Image from 'next/image'
+import { useInView } from 'react-intersection-observer'
 
 const TitleGradientStyle = {
   background: 'linear-gradient(188.88deg, #0080FB 6.75%, #153CA9 124.65%)',
@@ -16,15 +18,23 @@ const TitleGradientStyle = {
 }
 
 const IndexPage = definePage(() => {
+
   const scrollY = useScrollPosition(60)
-  const { height, width } = useWindowSize()
-  const [positionPercentage, setPositionPercentage] = useState(0)
+
+  const { height: windowHeight } = useWindowSize()
+  const [rocketInitScrollY, setRocketInitScrollY] = useState<number | undefined>()
+  const [rocketPosition, setRocketPosition] = useState(0)
+
+  const { ref: rocketMasterElementRef,
+    inView: showRocket
+  } = useInView({
+    threshold: 0,
+  });
 
   useEffect(() => {
-    if (window) {
-      setPositionPercentage(Math.round((scrollY / (height - height * 0.4)) * 100) || 0)
-    }
-  }, [scrollY, height])
+    if (showRocket && (typeof rocketInitScrollY) === "undefined") setRocketInitScrollY(scrollY + 200)
+    if (showRocket && (typeof rocketInitScrollY) === "number") setRocketPosition(scrollY - (rocketInitScrollY as number))
+  }, [rocketInitScrollY, scrollY, showRocket, windowHeight])
 
   return (
     <div >
@@ -32,7 +42,7 @@ const IndexPage = definePage(() => {
         The <span style={TitleGradientStyle}>future </span> of chatting
       </h1>
       <p className="leading-normal" >
-        We are well versed in distributed systems, committed to <span className="underline">breaking through traditional social <span className="text-black">limit</span>ations and
+        We are well versed in distributed systems, committed to <span className="underline">breaking through traditional social  <span className="text-black">limit</span>ations and
           sparking new change through decentralisation & Web3.</span>
       </p>
       <div className="flex sm:(space-x-4) <sm:(space-x-4) flex-row justify-between  md:justify-start  ">
@@ -58,28 +68,31 @@ const IndexPage = definePage(() => {
         </Button>
       </div>
 
-      <div className="mt-46 md:mt-62 static ">
-        <div className="relative">
+      <div className="mt-46 md:mt-62 ">
+        <div className="">
           <p className="-mb-10 font-semibold text-xl text-center">For daily, For life, For work</p>
           <p className=" font-semibold text-5xl text-center text-black">Chat, Play, Communication</p>
-          <p className=" font-semibold text-center">No risk of entitlement, allowing security and privacy to accompany your daily routine</p>
+          <p className=" font-semibold text-center">
+            No risk of entitlement, allowing security and privacy to accompany your daily routine</p>
         </div>
       </div>
 
-      <div className="mt-10">
-        <div className="w-full group pt-10 sm:pt-40 mt-10">
-          <div className="flex h-24 rounded-3xl flex-row items-center justify-around relative" style={{ background: "linear-gradient(188.88deg, #0080FB 6.75%, #153CA9 124.65%)" }}>
-            <p className="text-8xl md:text-10xl absolute " style={isFinite(positionPercentage) ?
-              // md: positionPercentage > 130 opacity: 1-0.1
-              ((width > 400 && { left: positionPercentage * 5 - 500 || 0, bottom: positionPercentage * 5 - 500 || 0, opacity: (positionPercentage > 130) ? (140 - positionPercentage) * 0.1 : 1 }
-                || //sm: 
-                { left: positionPercentage * 5 - 700 + 20 || 0, bottom: positionPercentage * 5 - 700 || 0, opacity: (positionPercentage > 155) ? (165 - positionPercentage) * 0.1 : 1 })) : {}}>
+      <div className="mt-10" >
+        <div className="group pt-10 sm:pt-40 mt-10  " ref={(rocketMasterElementRef) as LegacyRef<HTMLDivElement>}>
+          <div className="flex h-24 rounded-3xl flex-row items-center justify-around relative z-10" style={{ background: "linear-gradient(188.88deg, #0080FB 6.75%, #153CA9 124.65%)" }}>
+            {showRocket ? <p className="text-8xl md:text-10xl absolute z-50" style={
+              {
+                left: rocketPosition || 0,
+                bottom: rocketPosition || 0,
+                opacity: (rocketPosition > 100) ? ((200 - rocketPosition) / 100) : 1
+              }
+            }>
               🚀
-            </p>
+            </p> : null}
             <p className={
-              "text-white/90 font-extrabold text-lg md:text-4xl p-4 ml-20" +
+              "text-white/90 font-extrabold text-lg md:text-4xl p-4 ml-30" +
               " transform duration-300 ease-in-out delay-75 relative group-hover:(translate-x-6 text-white)"
-            }> WE STARTUP, IN PROGRESS NOW! </p>
+            }> WE STARTUP, IN PROGRESS NOW!</p>
           </div>
         </div>
         <h2 className="mt-40 md:mt-60 font-bold text-3xl text-center">Constituents</h2>
@@ -100,7 +113,7 @@ const IndexPage = definePage(() => {
           <div className="w-full">
             <div className="relative flex flex-row-reverse bg-black h-90 mt-2 rounded-3xl w-full overflow-hidden group hover:cursor-pointer">
               <div className="p-10 absolute left-0 z-30 text-white ">
-                <h3 className="text-4xl">Decentralization</h3>
+                <h3 className="text-3xl md:text-4xl">Decentralization</h3>
                 <p className="leading-normal mt-4 text-white">
                   In addition to chat, there are DAOs, smart contracts. Total and Web3 applications, everything!
                 </p>
@@ -125,7 +138,7 @@ const IndexPage = definePage(() => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     </div >
   )
 })
