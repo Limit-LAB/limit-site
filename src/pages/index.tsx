@@ -59,7 +59,7 @@ const IndexPage = definePage(() => {
       </div>
 
       <div className="mt-46 md:mt-62 static ">
-        <div className="z-20  bg-background/20 backdrop-blur rounded-3xl relative z-10">
+        <div className="relative">
           <p className="-mb-10 font-semibold text-xl text-center">For daily, For life, For work</p>
           <p className=" font-semibold text-5xl text-center text-black">Chat, Play, Communication</p>
           <p className=" font-semibold text-center">No risk of entitlement, allowing security and privacy to accompany your daily routine</p>
@@ -68,17 +68,18 @@ const IndexPage = definePage(() => {
 
       <div className="mt-10">
         <div className="w-full group pt-10 sm:pt-40 mt-10">
-          <div className="flex h-24 rounded-3xl flex-row items-center justify-around" style={{ background: "linear-gradient(188.88deg, #0080FB 6.75%, #153CA9 124.65%)" }}>
-            <p className="text-8xl md:text-10xl relative" style={isFinite(positionPercentage) ?
-              ((width > 400 && { left: positionPercentage * 5 - 500 || 0, bottom: positionPercentage * 5 - 500 || 0 }
-                ||
-                { left: positionPercentage * 5 - 700 + 20 || 0, bottom: positionPercentage * 5 - 700 || 0 })) : {}}>
+          <div className="flex h-24 rounded-3xl flex-row items-center justify-around relative" style={{ background: "linear-gradient(188.88deg, #0080FB 6.75%, #153CA9 124.65%)" }}>
+            <p className="text-8xl md:text-10xl absolute " style={isFinite(positionPercentage) ?
+              // md: positionPercentage > 130 opacity: 1-0.1
+              ((width > 400 && { left: positionPercentage * 5 - 500 || 0, bottom: positionPercentage * 5 - 500 || 0, opacity: (positionPercentage > 130) ? (140 - positionPercentage) * 0.1 : 1 }
+                || //sm: 
+                { left: positionPercentage * 5 - 700 + 20 || 0, bottom: positionPercentage * 5 - 700 || 0, opacity: (positionPercentage > 155) ? (165 - positionPercentage) * 0.1 : 1 })) : {}}>
               🚀
             </p>
             <p className={
-              "text-white/90 font-extrabold text-lg md:text-4xl p-4" +
-              " transform duration-150 ease-linear relative group-hover:(translate-x-6 text-white)"
-            }> WE STARTUP, IN PROGRESS NOW!</p>
+              "text-white/90 font-extrabold text-lg md:text-4xl p-4 ml-20" +
+              " transform duration-300 ease-in-out delay-75 relative group-hover:(translate-x-6 text-white)"
+            }> WE STARTUP, IN PROGRESS NOW! </p>
           </div>
         </div>
         <h2 className="mt-40 md:mt-60 font-bold text-3xl text-center">Constituents</h2>
@@ -92,10 +93,10 @@ const IndexPage = definePage(() => {
             <Button text="Github Repo" variant="primary" className="group-hover:(bg-background text-primary)" />
           </div>
           <Image src={ImgOrca} alt="orca" height={350}
-            className="transform transition ease-linear delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-500" />
+            className="transform transition ease-out delay-75 group-hover:-translate-y-1 group-hover:scale-110 duration-500 opacity-80" />
         </div>
         {/* blocks for features description  */}
-        <div className="md:flex space-x-0 md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row ">
+        <div className="md:flex space-x-0 md:space-x-2 space-y-2 md:space-y-0 flex-col md:flex-row mb-20">
           <div className="w-full">
             <div className="relative flex flex-row-reverse bg-black h-90 mt-2 rounded-3xl w-full overflow-hidden group hover:cursor-pointer">
               <div className="p-10 absolute left-0 z-30 text-white ">
@@ -105,7 +106,7 @@ const IndexPage = definePage(() => {
                 </p>
               </div>
               <Image src={ImgDecent} alt="orca" height={400}
-                className=" rounded-3xl transform transition ease-linear delay-150 group-hover:scale-110 duration-500 opacity-30 " />
+                className="rounded-3xl transform transition ease-out delay-75 group-hover:scale-110 duration-500 opacity-30 " />
             </div>
           </div>
 
@@ -117,7 +118,7 @@ const IndexPage = definePage(() => {
                 <p className="leading-normal mt-4 ">
                   All messages are E2E encrypted — include group chats, no one will sneak peek on you, except me
                 </p>
-                <div className="rounded-3xl transform transition ease-linear delay-150 group-hover:scale-110 duration-500 text-9xl text-center ">
+                <div className="rounded-3xl transform transition ease-out group-hover:scale-110 duration-500 text-8xl md:text-9xl text-center ">
                   <span>🔒🔑</span>
                 </div>
               </div>
