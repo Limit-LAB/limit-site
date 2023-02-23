@@ -39,10 +39,10 @@ const NavBar = defineVFC(() => {
 
   const menu = (
     <div
-      className={`flex font-display font-semibold transition-all
+      className={`flex font-display font-semibold transition-all overflow-hidden
       <sm:(h-full fixed z-1 top-14 left-0 w-0 overflow-x-hidden bg-background flex flex-col pt-4 text-4xl)
       sm:(space-x-2 text-neutral-600) 
-      ${showMenu ? '<sm:(w-full px-8 absolute bottom-0 left-0 h-screen) ' : ''}`}
+      ${showMenu ? '<sm:(w-full px-8 absolute bottom-0 left-0 h-screen)  ' : ''}`}
     >
       {Object.entries(navs).map(([name, path],) => (
         <nav key={name}>
