@@ -9,6 +9,7 @@ import ImgOrca from '../public/orca.jpg'
 import ImgDecent from '../public/decentralized.jpg'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
+import LimitSiteHead from '@comps/Head';
 
 const TitleGradientStyle = {
   background: 'linear-gradient(188.88deg, #0080FB 6.75%, #153CA9 124.65%)',
@@ -38,26 +39,27 @@ const IndexPage = definePage(() => {
 
   return (
     <div >
+      <LimitSiteHead />
       <h1 className="font-extrabold my-6 <md:text-6xl md:text-8xl " >
         The <span style={TitleGradientStyle}>future </span> of chatting
       </h1>
-      <p className="leading-normal" >
+      <p className="leading-normal">
         We are well versed in distributed systems, committed to <span className="underline">breaking through traditional social  <span className="text-black">limit</span>ations and
           sparking new change through decentralisation & Web3.</span>
       </p>
-      <div className="flex sm:(space-x-4) <sm:(space-x-4) flex-row justify-between  md:justify-start  ">
-        <div className="rounded-full bg-light relative w-36 md:w-46">
+      <div className="flex sm:(space-x-4) <sm:(space-x-4) flex-row justify-between md:justify-start ">
+        <div className="rounded-full bg-light relative w-32 md:w-38">
           <Button
-            text="Getting started"
+            text="Get started"
             icon="material-symbols:arrow-top-right"
             href="/user"
             variant="base"
-            className={"bg-primary text-white h-full absolute bottom-0 left-0 " +
-              "transform delay-100 ease-linear duration-150 hover:translate-x-1 text-sm md:text-base " +
+            className={"bg-primary justify-between text-white h-full absolute bottom-0 left-0 break-all " +
+              "transform delay-100 ease-linear duration-150 hover:translate-x-1 " +
               "hover:bg-light"}
           />
         </div>
-        <Button variant="text" className="group" href="https://github.com/Limit-LAB">
+        <Button variant="text" className="group mb-1 md:mb-0" href="https://github.com/Limit-LAB">
           <span className={
             " -ml-2 bg-background transform translate-x-6 duration-150 ease-linear " +
             " text-sm md:text-base " +

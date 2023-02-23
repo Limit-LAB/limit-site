@@ -7,7 +7,7 @@ import type { MouseEventHandler } from 'react'
 type Variant = 'primary' | 'secondary' | 'text' | "base"
 
 const buttonBaseStyleNormal = `
-  py-1 px-2 md:(py-2 px-4) align-middle cursor-pointer 
+  py-2 px-2 md:(py-2 px-4) align-middle cursor-pointer 
   flex items-center font-display font-bold transition 
   rounded-full
 `
@@ -38,8 +38,8 @@ const Button = defineVFC<{
     (`${buttonBaseStyleNormal} ${buttonStyle[variant || 'primary']} ${extClassName}`)
 
   const buttonChildren = <>
-    {children ? children : text}
-    {icon && typeof icon == 'string' && <Icon inline icon={icon} width={18} className="ml-1 md:ml-2" />}
+    {children ? children : <span> {text} </span>}
+    {icon && typeof icon == 'string' && <Icon inline icon={icon} width={16} className="ml-0 md:ml-2" />}
     {icon && typeof icon != 'string' && icon}
   </>
   return href
