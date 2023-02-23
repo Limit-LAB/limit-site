@@ -9,6 +9,7 @@ import ImgOrca from '../public/orca.jpg'
 import ImgDecent from '../public/decentralized.jpg'
 import Image from 'next/image'
 import { useInView } from 'react-intersection-observer'
+import LimitSiteHead from '@comps/Head';
 
 const TitleGradientStyle = {
   background: 'linear-gradient(188.88deg, #0080FB 6.75%, #153CA9 124.65%)',
@@ -38,6 +39,7 @@ const IndexPage = definePage(() => {
 
   return (
     <div >
+      <LimitSiteHead />
       <h1 className="font-extrabold my-6 <md:text-6xl md:text-8xl " >
         The <span style={TitleGradientStyle}>future </span> of chatting
       </h1>
