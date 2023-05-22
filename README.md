@@ -1,25 +1,20 @@
-# Website of LIMIT IM
+# Website of Limit-LAB
 
 ## Development
 
 ```bash
-yarn install # install dependencies
-yarn dev # start development server
+pnpm install # install dependencies
+pnpm dev # start development server
 ```
 
 ### Structure
 
 Framework: [Next.js](https://nextjs.org/)
-CSS: [WindiCSS](https://windicss.org/)
+CSS: [Tailwind](https://tailwindcss.com/)
 
 ```bash
 src
-├── core # Helpers/utils/js-related stuff, alias: `@core/`
-├── pages # Pages rendered by Next.js, alias: `@pages/`
-├── components # alias: `@comps/`
-└── public # Static files
+├── pages
+├── components
+└── public
 ```
-
-### Optional
-
-WindiCSS intellisense: https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense
