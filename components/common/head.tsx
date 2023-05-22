@@ -35,14 +35,14 @@ export interface LimitSiteHeadProps {
 
 const LimitSiteHead: FC<LimitSiteHeadProps> = props => {
   const {
-    title = 'Limit LAB',
+    title = 'Limit-LAB',
     description = 'Limit-LAB is on a mission to shape an ai-powered future.',
     keywords,
     imageUrl = LimitLABLogo.src,
     imageAlt = 'Limit LAB official site',
     url = 'https://limit.dev',
     type = 'website',
-    siteName = 'Limit LAB',
+    siteName = 'Limit-LAB',
     creator = '@limit_lab',
     twitterCard = 'summary',
   } = props

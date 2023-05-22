@@ -1,7 +1,7 @@
 import { NextPageWithLayout } from './_app'
 import BaseLayout from '~/layouts/base'
 import { Button } from '~/components/common/button'
-import { AiOutlineArrowRight } from 'react-icons/ai'
+import {AiFillGithub, AiOutlineArrowRight} from 'react-icons/ai'
 import { Roboto_Mono } from 'next/font/google'
 import { twJoin } from 'tailwind-merge'
 import Link from 'next/link'
@@ -41,25 +41,28 @@ const Home: NextPageWithLayout = () => {
       <LimitSiteHead />
       <section className="container w-fit m-auto text-center flex flex-col gap-5 py-12 px-2">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
-          Limit-LAB is on a mission to shape <br /> an{' '}
+          Our mission is to shape <br /> an{' '}
           <span className="text-blue-600">AI-powered</span> future.
         </h2>
         <p className="text-xl text-gray-400">
-          next-generation open source, community-driven prompt-base for
+          Next-generation open source, community-driven prompt-base for
           professionals.
         </p>
         <div className="text-center">
           <Button className="px-5 py-2.5">
-            Start for free
-            <AiOutlineArrowRight className="ml-2 text-lg" />
+            Coming soon
+            { /*<AiOutlineArrowRight className="ml-2 text-lg" />*/ }
+          </Button>
+          <Button onClick={()=> window.open('https://translate.limit.dev')} className="px-5 py-2.5" style={{marginLeft: '10px'}} variant={"light"}>
+            Try our Translator
+            { /*<AiOutlineArrowRight className="ml-2 text-lg" />*/ }
           </Button>
         </div>
-        <p className="text-gray-400 text-sm -m-2">No credit card required.</p>
       </section>
       <figure className="flex items-center justify-center bg-blue-600 text-white w-full">
         <p className="container p-6 text-xl lg:text-2xl text-center">
-          Join our 400,000+ person community and contribute to a more private
-          and decentralized internet!
+          Join our community and contribute to an
+          awesome prompt ecosystem!
         </p>
       </figure>
       <div className="container m-auto py-10 px-6">
@@ -72,8 +75,8 @@ const Home: NextPageWithLayout = () => {
           <div className="md:flex justify-between flex-wrap md:flex-nowrap gap-6">
             <div className="flex flex-col gap-4">
               <h2 className="text-2xl lg:text-3xl">
-                All our code are <br /> belongs to{' '}
-                <span className="text-blue-500">you</span>
+                Our codes make<br /> life{' '}
+                <span className="text-blue-500">Easier</span>
               </h2>
               <p>Making our code visible to the public. Awesome!</p>
               <Link href={'https://github.com/Limit-LAB'}>
@@ -81,7 +84,7 @@ const Home: NextPageWithLayout = () => {
                   variant="secondary"
                   className="bg-[#3c3c3c] border-gray-200 border"
                 >
-                  View on GitHub
+                  View on GitHub <AiOutlineArrowRight className="ml-2 text-lg" />
                 </Button>
               </Link>
             </div>
@@ -105,22 +108,22 @@ const Home: NextPageWithLayout = () => {
           <div className="mt-6 gap-8 grid grid-cols-4">
             <Card
               title="promptc"
-              description="promptc is a project that aims to help developers write better prompts, and make prompts 'prompt once, run everywhere'."
+              description="promptc is a project aiming to help developers focus on prompts instead of writing code. It makes prompts 'prompt once, run everywhere'."
               link="https://github.com/promptc"
             />
             <Card
               title="Prompt Hub"
-              description=""
+              description="Platform for creating, sharing, arranging, evaluating and managing prompts. Revolution the way of Prompt Engineering."
               link="https://github.com/limit-lab"
             />
             <Card
               title="Orkas"
-              description="Decentralized MQ implementation with SWIM, CRDT and Limlog. This crate depends on Tokio."
+              description="Decentralised MQ implementation with SWIM, CRDT and Limlog. This crate depends on Tokio."
               link="https://github.com/Limit-LAB/Orkas"
             />
             <Card
-              title="Cetacea Protocol"
-              description="The next generation protocol for decentralized communication. Provide a decentralized distributed network for federated communication."
+              title="Cetacea"
+              description="The next generation protocol for decentralised communication. Provide a decentralised distributed network for federated communication."
               link="https://github.com/Limit-LAB/Cetacea-Proto"
             />
           </div>

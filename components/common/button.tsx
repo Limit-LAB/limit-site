@@ -17,16 +17,20 @@ type ButtonVariant = keyof typeof variants
 export interface ButtonProps extends PropsWithChildren {
   variant?: ButtonVariant
   className?: string
+  style?: React.CSSProperties
+  onClick?: () => void
 }
 
 export const Button: FC<ButtonProps> = props => {
   return (
     <button
+      onClick={props.onClick}
       className={twJoin(
         'inline-flex items-center rounded-lg px-3 py-1.5 text-sm',
         variants[props.variant || 'primary'],
         props.className
       )}
+      style={props.style}
     >
       {props.children}
     </button>
