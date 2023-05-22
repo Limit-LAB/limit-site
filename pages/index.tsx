@@ -53,7 +53,7 @@ const Home: NextPageWithLayout = () => {
         </div>
         <p className="text-gray-400 text-sm">No credit card required.</p>
       </section>
-      <figure className="flex items-center justify-center bg-blue-600 text-white h-28 w-full">
+      <figure className="flex items-center justify-center bg-blue-600 text-white w-full">
         <p className="container p-6 text-xl lg:text-2xl text-center">
           Join our 400,000+ person community and contribute to a more private
           and decentralized internet!
