@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import LimitLABLogo from '~/public/limit-lab-log.svg'
+import ogImage from '~/public/logo.jpg'
 
 import icon57 from '~/public/apple-icon-57x57.png'
 import icon60 from '~/public/apple-icon-60x60.png'
@@ -83,7 +84,7 @@ const LimitSiteHead: FC<LimitSiteHeadProps> = props => {
       <meta property="og:description" content={description} />
 
       <meta name="twitter:card" content={twitterCard} />
-      <meta name="twitter:image:src" content={imageUrl} />
+      <meta name="twitter:image:src" content={ogImage.src} />
       <meta name="twitter:site" content={siteName || title} />
       <meta name="twitter:creator" content={creator} />
       <meta name="twitter:title" content={title} />
