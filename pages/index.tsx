@@ -1,118 +1,122 @@
+import { NextPageWithLayout } from './_app'
+import BaseLayout from '~/layouts/base'
+import { Button } from '~/components/common/button'
+import { AiOutlineArrowRight } from 'react-icons/ai'
+import { Roboto_Mono } from 'next/font/google'
+import { twJoin } from 'tailwind-merge'
+import Link from 'next/link'
 import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import IconReact from '~/public/tech/react.webp'
+import IconGithub from '~/public/tech/github.webp'
+import IconTypeScript from '~/public/tech/typescript.webp'
+import { RxArrowTopRight } from 'react-icons/rx'
+import { FC } from 'react'
+import LimitSiteHead from '~/components/common/head'
 
-const inter = Inter({ subsets: ['latin'] })
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+})
 
-export default function Home() {
+export interface CardProps {
+  title: string
+  description: string
+}
+
+export const Card: FC<CardProps> = props => {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">pages/index.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <section className="flex-1 p-4 rounded-lg border-gray-200 border gap-4 flex flex-col bg-[#3c3c3c]">
+      <h2 className="text-4xl">{props.title}</h2>
+      <p>{props.description}</p>
+      <RxArrowTopRight className="text-2xl" />
+    </section>
   )
 }
+
+const Home: NextPageWithLayout = () => {
+  return (
+    <div>
+      <LimitSiteHead />
+      <section className="container w-fit m-auto text-center flex flex-col gap-5 py-12 px-2">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
+          Limit-LAB is on a mission to shape <br /> an{' '}
+          <span className="text-blue-600">ai-powered</span> future.
+        </h2>
+        <p className="text-xl text-gray-400">
+          next-generation open source, community-driven prompt-base for
+          professionals.
+        </p>
+        <div className="text-center">
+          <Button className="px-5 py-2.5">
+            Start for free
+            <AiOutlineArrowRight className="ml-2 text-lg" />
+          </Button>
+        </div>
+        <p className="text-gray-400 text-sm">No credit card required.</p>
+      </section>
+      <figure className="flex items-center justify-center bg-blue-600 text-white h-28 w-full">
+        <p className="container p-6 text-xl lg:text-2xl text-center">
+          Join our 400,000+ person community and contribute to a more private
+          and decentralized internet!
+        </p>
+      </figure>
+      <div className="container m-auto py-10 px-6">
+        <section
+          className={twJoin(
+            robotoMono.className,
+            'p-12 bg-[#333] text-white rounded-lg flex flex-col gap-4'
+          )}
+        >
+          <div className="md:flex justify-between flex-wrap md:flex-nowrap gap-6">
+            <div className="flex flex-col gap-4">
+              <h2 className="md:text-2xl lg:text-3xl">
+                All our code are <br /> belongs to{' '}
+                <span className="text-blue-500">you</span>
+              </h2>
+              <p>Making our code visible to the public. Awesome!</p>
+              <Link href={'https://github.com/Limit-LAB'}>
+                <Button
+                  variant="secondary"
+                  className="bg-[#3c3c3c] border-gray-200 border"
+                >
+                  View on GitHub
+                </Button>
+              </Link>
+            </div>
+            <div className="hidden md:flex items-center justify-between gap-8">
+              <div>
+                <Image src={IconReact} width={150} height={130} alt="react" />
+              </div>
+              <div>
+                <Image
+                  src={IconTypeScript}
+                  width={140}
+                  height={140}
+                  alt="typescript"
+                />
+              </div>
+              <div>
+                <Image src={IconGithub} width={150} height={150} alt="github" />
+              </div>
+            </div>
+          </div>
+          <div className="mt-6 flex gap-8 flex-wrap">
+            <Card
+              title="Orkas"
+              description="Decentralized MQ implementation with SWIM, CRDT and Limlog. This crate depends on Tokio."
+            />
+            <Card
+              title="Cetacea Protocol"
+              description="The next generation protocol for decentralized communication. it uses Orkas to provide a decentralized distributed network for federated communication."
+            />
+          </div>
+        </section>
+      </div>
+    </div>
+  )
+}
+
+Home.getLayout = function getLayout(page) {
+  return <BaseLayout>{page}</BaseLayout>
+}
+
+export default Home
