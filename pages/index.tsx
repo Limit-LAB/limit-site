@@ -20,7 +20,7 @@ export interface CardProps {
 
 export const Card: FC<CardProps> = props => {
   return (
-    <section className="flex-1 p-4 rounded-lg border-gray-200 border gap-4 flex flex-col bg-[#3c3c3c] col-span-4 md:col-span-2 lg:col-span-1">
+    <section style={{cursor: 'pointer'}} onClick={() => window.open(props.link, '_blank')} className="flex-1 p-4 rounded-lg border-gray-200 border gap-4 flex flex-col bg-[#3c3c3c] col-span-4 md:col-span-2 lg:col-span-1">
       <h2 className="text-4xl">{props.title}</h2>
       <p className="opacity-80">{props.description}</p>
       <Link href={props.link} target="_blank" className="mt-auto">
