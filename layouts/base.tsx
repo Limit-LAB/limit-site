@@ -70,7 +70,7 @@ export const Header = () => {
 
 const Footer = () => {
   return (
-    <footer className="py-8 px-20 bg-[#3a4c5c] text-white">
+    <footer className="py-8 px-10 md:px-20 bg-[#3a4c5c] text-white">
       <div className="container m-auto gap-6 flex flex-col">
         <div className="flex items-center -ml-2">
           <Image src={logoNoText} alt="Limit Lab" width={40} height={40} />

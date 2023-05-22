@@ -66,7 +66,7 @@ const Home: NextPageWithLayout = () => {
         <section
           className={twJoin(
             robotoMono.className,
-            'p-12 bg-[#333] text-white rounded-lg flex flex-col gap-4'
+            'p-6 lg:p-12 bg-[#333] text-white rounded-lg flex flex-col gap-4'
           )}
         >
           <div className="md:flex justify-between flex-wrap md:flex-nowrap gap-6">
