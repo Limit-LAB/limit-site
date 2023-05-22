@@ -104,12 +104,12 @@ const Home: NextPageWithLayout = () => {
           </div>
           <div className="mt-6 gap-8 grid grid-cols-4">
             <Card
-              title="Promptc"
+              title="promptc"
               description="promptc is a project that aims to help developers write better prompts, and make prompts 'prompt once, run everywhere'."
               link="https://github.com/promptc"
             />
             <Card
-              title="Promptc Hub"
+              title="Prompt Hub"
               description=""
               link="https://github.com/limit-lab"
             />
