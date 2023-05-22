@@ -1,8 +1,7 @@
 import { NextPageWithLayout } from './_app'
 import BaseLayout from '~/layouts/base'
 import { Button } from '~/components/common/button'
-import {AiFillGithub, AiOutlineArrowRight} from 'react-icons/ai'
-import { Roboto_Mono } from 'next/font/google'
+import {AiOutlineArrowRight} from 'react-icons/ai'
 import { twJoin } from 'tailwind-merge'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -12,10 +11,6 @@ import IconTypeScript from '~/public/tech/typescript.webp'
 import { RxArrowTopRight } from 'react-icons/rx'
 import { FC } from 'react'
 import LimitSiteHead from '~/components/common/head'
-
-const robotoMono = Roboto_Mono({
-  subsets: ['latin'],
-})
 
 export interface CardProps {
   title: string
@@ -68,7 +63,6 @@ const Home: NextPageWithLayout = () => {
       <div className="container m-auto py-10 px-6">
         <section
           className={twJoin(
-            robotoMono.className,
             'p-6 lg:p-12 bg-[#333] text-white rounded-lg flex flex-col gap-4'
           )}
         >
