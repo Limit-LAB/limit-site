@@ -71,7 +71,7 @@ const Home: NextPageWithLayout = () => {
         >
           <div className="md:flex justify-between flex-wrap md:flex-nowrap gap-6">
             <div className="flex flex-col gap-4">
-              <h2 className="md:text-2xl lg:text-3xl">
+              <h2 className="text-2xl lg:text-3xl">
                 All our code are <br /> belongs to{' '}
                 <span className="text-blue-500">you</span>
               </h2>
