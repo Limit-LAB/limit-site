@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import LimitLABLogo from '~/public/Limit-LAB-log.svg'
+import LimitLABLogo from '~/public/limit-lab-log.svg'
 
 import icon57 from '~/public/apple-icon-57x57.png'
 import icon60 from '~/public/apple-icon-60x60.png'

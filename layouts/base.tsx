@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, useState } from 'react'
 import Image from 'next/image'
-import logo from '~/public/Limit-LAB-log.svg'
+import logo from '~/public/limit-lab-log.svg'
 import { Inter } from 'next/font/google'
 import { Button } from '~/components/common/button'
 import {
