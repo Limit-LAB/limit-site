@@ -51,15 +51,16 @@ const Home: NextPageWithLayout = () => {
             Coming soon
             {/*<AiOutlineArrowRight className="ml-2 text-lg" />*/}
           </Button>
-          <Button
-            onClick={() => window.open('https://translate.limit.dev')}
-            className="px-5 py-2.5"
-            style={{ marginLeft: '10px' }}
-            variant={'light'}
-          >
-            Try our Translator
-            {/*<AiOutlineArrowRight className="ml-2 text-lg" />*/}
-          </Button>
+          <Link target="_blank" href={'https://translate.limit.dev'}>
+            <Button
+              className="px-5 py-2.5"
+              style={{ marginLeft: '10px' }}
+              variant={'light'}
+            >
+              Try our Translator
+              {/*<AiOutlineArrowRight className="ml-2 text-lg" />*/}
+            </Button>
+          </Link>
         </div>
       </section>
       <figure className="flex items-center justify-center bg-blue-600 text-white w-full">
@@ -119,6 +120,11 @@ const Home: NextPageWithLayout = () => {
               title="Prompt Hub"
               description="Platform for creating, sharing, arranging, evaluating and managing prompts. Revolution the way of Prompt Engineering."
               link="https://github.com/limit-lab"
+            />
+            <Card
+              title="Translator"
+              description="Translate texts into different languages with powerful LLM AI. Based on promptc."
+              link="https://translate.limit.dev"
             />
             <Card
               title="Orkas"

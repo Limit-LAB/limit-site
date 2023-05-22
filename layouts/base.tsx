@@ -8,7 +8,8 @@ import {
   AiOutlineMenu,
   AiOutlineClose,
   AiOutlineTwitter,
-  AiFillGithub
+  AiFillGithub,
+  AiFillMail
 } from 'react-icons/ai'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
@@ -90,9 +91,13 @@ const Footer = () => {
           <Link href={'https://twitter.com/limit_lab'}>
             <AiOutlineTwitter />
           </Link>
+          <Link href={'mailto:hi@limit.dev'}>
+            <AiFillMail />
+          </Link>
         </div>
         <p className="text-xs">
-          © {new Date().getFullYear()} Limit-LAB. All rights reserved.
+          &copy; {new Date().getFullYear()} Limit-LAB Limited. All rights
+          reserved.
         </p>
       </div>
     </footer>
