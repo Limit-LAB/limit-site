@@ -43,8 +43,8 @@ const Home: NextPageWithLayout = () => {
           <span className="text-blue-600">AI-powered</span> future.
         </h2>
         <p className="text-xl text-gray-400">
-          Next-generation open source, community-driven prompt-base for
-          professionals.
+          Next-generation prompt platform. Embracing the LLM era with
+          confidence.
         </p>
         <div className="text-center">
           <Button className="px-5 py-2.5">
@@ -80,7 +80,7 @@ const Home: NextPageWithLayout = () => {
                 <br /> life <span className="text-blue-500">Easier</span>
               </h2>
               <p className="opacity-80">
-                Making our code visible to the public. Awesome!
+                Interested in us? Figure out what we are doing.
               </p>
               <Link href={'https://github.com/Limit-LAB'}>
                 <Button
