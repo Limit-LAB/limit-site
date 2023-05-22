@@ -1,7 +1,7 @@
 import { NextPageWithLayout } from './_app'
 import BaseLayout from '~/layouts/base'
 import { Button } from '~/components/common/button'
-import {AiOutlineArrowRight} from 'react-icons/ai'
+import { AiOutlineArrowRight } from 'react-icons/ai'
 import { twJoin } from 'tailwind-merge'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -22,8 +22,8 @@ export const Card: FC<CardProps> = props => {
   return (
     <section className="flex-1 p-4 rounded-lg border-gray-200 border gap-4 flex flex-col bg-[#3c3c3c] col-span-4 md:col-span-2 lg:col-span-1">
       <h2 className="text-4xl">{props.title}</h2>
-      <p>{props.description}</p>
-      <Link href={props.link} target="_blank" className='mt-auto'>
+      <p className="opacity-80">{props.description}</p>
+      <Link href={props.link} target="_blank" className="mt-auto">
         <RxArrowTopRight className="text-2xl" />
       </Link>
     </section>
@@ -46,18 +46,22 @@ const Home: NextPageWithLayout = () => {
         <div className="text-center">
           <Button className="px-5 py-2.5">
             Coming soon
-            { /*<AiOutlineArrowRight className="ml-2 text-lg" />*/ }
+            {/*<AiOutlineArrowRight className="ml-2 text-lg" />*/}
           </Button>
-          <Button onClick={()=> window.open('https://translate.limit.dev')} className="px-5 py-2.5" style={{marginLeft: '10px'}} variant={"light"}>
+          <Button
+            onClick={() => window.open('https://translate.limit.dev')}
+            className="px-5 py-2.5"
+            style={{ marginLeft: '10px' }}
+            variant={'light'}
+          >
             Try our Translator
-            { /*<AiOutlineArrowRight className="ml-2 text-lg" />*/ }
+            {/*<AiOutlineArrowRight className="ml-2 text-lg" />*/}
           </Button>
         </div>
       </section>
       <figure className="flex items-center justify-center bg-blue-600 text-white w-full">
         <p className="container p-6 text-xl lg:text-2xl text-center">
-          Join our community and contribute to an
-          awesome prompt ecosystem!
+          Join our community and contribute to an awesome prompt ecosystem!
         </p>
       </figure>
       <div className="container m-auto py-10 px-6">
@@ -69,16 +73,19 @@ const Home: NextPageWithLayout = () => {
           <div className="md:flex justify-between flex-wrap md:flex-nowrap gap-6">
             <div className="flex flex-col gap-4">
               <h2 className="text-2xl lg:text-3xl">
-                Our codes make<br /> life{' '}
-                <span className="text-blue-500">Easier</span>
+                Our codes make
+                <br /> life <span className="text-blue-500">Easier</span>
               </h2>
-              <p>Making our code visible to the public. Awesome!</p>
+              <p className="opacity-80">
+                Making our code visible to the public. Awesome!
+              </p>
               <Link href={'https://github.com/Limit-LAB'}>
                 <Button
                   variant="secondary"
                   className="bg-[#3c3c3c] border-gray-200 border"
                 >
-                  View on GitHub <AiOutlineArrowRight className="ml-2 text-lg" />
+                  View on GitHub{' '}
+                  <AiOutlineArrowRight className="ml-2 text-lg" />
                 </Button>
               </Link>
             </div>
