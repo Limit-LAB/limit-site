@@ -75,7 +75,7 @@ const LimitSiteHead: FC<LimitSiteHeadProps> = props => {
         />
       )}
 
-      <meta property="og:image" content={imageUrl} />
+      <meta property="og:image" content={ogImage.src} />
       <meta property="og:image:alt" content={imageAlt} />
       <meta property="og:site_name" content={siteName || title} />
       <meta property="og:title" content={title} />
@@ -84,6 +84,7 @@ const LimitSiteHead: FC<LimitSiteHeadProps> = props => {
       <meta property="og:description" content={description} />
 
       <meta name="twitter:card" content={twitterCard} />
+      <meta property="twitter:image" content={ogImage.src}></meta>
       <meta name="twitter:image:src" content={ogImage.src} />
       <meta name="twitter:site" content={siteName || title} />
       <meta name="twitter:creator" content={creator} />
