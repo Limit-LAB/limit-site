@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren, useState } from 'react'
 import Image from 'next/image'
-import logo from '~/public/limit-lab-log.svg'
+import logo from '~/public/logo_fixed.svg'
+import logoNoText from '~/public/logo_no_text.png'
 import { Inter } from 'next/font/google'
 import { Button } from '~/components/common/button'
 import {
@@ -31,7 +32,7 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   return (
     <header className="container m-auto p-6 flex h-20 items-center gap-6">
-      <Image src={logo} alt="Limit Lab" width={40} height={40} />
+      <Image src={logo} alt="Limit Lab" width={60} height={60} />
       <ul className="hidden md:flex text-sm text-gray-700 gap-6 font-medium">
         {navitems.map((item, index) => (
           <li key={index}>{item.name}</li>
@@ -72,7 +73,7 @@ const Footer = () => {
     <footer className="py-8 px-20 bg-[#3a4c5c] text-white">
       <div className="container m-auto gap-6 flex flex-col">
         <div className="flex items-center -ml-2">
-          <Image src={logo} alt="Limit Lab" width={40} height={40} />
+          <Image src={logoNoText} alt="Limit Lab" width={40} height={40} />
           Limit-LAB
         </div>
         <div className="flex gap-4 text-2xl">

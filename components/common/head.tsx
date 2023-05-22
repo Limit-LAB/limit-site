@@ -2,20 +2,20 @@ import Head from 'next/head'
 import LimitLABLogo from '~/public/limit-lab-log.svg'
 import ogImage from '~/public/logo.jpg'
 
-import icon57 from '~/public/apple-icon-57x57.png'
-import icon60 from '~/public/apple-icon-60x60.png'
-import icon72 from '~/public/apple-icon-72x72.png'
-import icon76 from '~/public/apple-icon-76x76.png'
-import icon114 from '~/public/apple-icon-114x114.png'
-import icon120 from '~/public/apple-icon-120x120.png'
-import icon144 from '~/public/apple-icon-144x144.png'
-import icon152 from '~/public/apple-icon-152x152.png'
-import icon180 from '~/public/apple-icon-180x180.png'
-import icon192 from '~/public/android-icon-192x192.png'
-import icon16 from '~/public/favicon-16x16.png'
-import icon32 from '~/public/favicon-32x32.png'
-import icon96 from '~/public/favicon-96x96.png'
-import iconMS144 from '~/public/ms-icon-144x144.png'
+import icon96 from '~/public/logo/favicon-96.png'
+import icon64 from '~/public/logo/favicon-64.png'
+import icon32 from '~/public/logo/favicon-32.png'
+import icon16 from '~/public/logo/favicon-16.png'
+import icon57 from '~/public/logo/favicon-57.png'
+import icon114 from '~/public/logo/favicon-114.png'
+import icon72 from '~/public/logo/favicon-72.png'
+import icon144 from '~/public/logo/favicon-144.png'
+import icon60 from '~/public/logo/favicon-160.png'
+import icon120 from '~/public/logo/favicon-120.png'
+import icon76 from '~/public/logo/favicon-76.png'
+import icon152 from '~/public/logo/favicon-152.png'
+import icon180 from '~/public/logo/favicon-180.png'
+
 import { FC } from 'react'
 // import manifestJSON from "~/public/manifest.json"
 
@@ -48,23 +48,36 @@ const LimitSiteHead: FC<LimitSiteHeadProps> = props => {
   } = props
   return (
     <Head>
-      <link rel="apple-touch-icon" sizes="57x57" href={icon57.src} />
-      <link rel="apple-touch-icon" sizes="60x60" href={icon60.src} />
-      <link rel="apple-touch-icon" sizes="72x72" href={icon72.src} />
-      <link rel="apple-touch-icon" sizes="76x76" href={icon76.src} />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="196x196"
+        href="/favicon-192.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="160x160"
+        href="/favicon-160.png"
+      />
+      <link rel="icon" type="image/png" sizes="96x96" href={icon96.src} />
+      <link rel="icon" type="image/png" sizes="64x64" href={icon64.src} />
+      <link rel="icon" type="image/png" sizes="32x32" href={icon32.src} />
+      <link rel="icon" type="image/png" sizes="16x16" href={icon16.src} />
+      <link rel="apple-touch-icon" href={icon57.src} />
       <link rel="apple-touch-icon" sizes="114x114" href={icon114.src} />
-      <link rel="apple-touch-icon" sizes="120x120" href={icon120.src} />
+      <link rel="apple-touch-icon" sizes="72x72" href={icon72.src} />
       <link rel="apple-touch-icon" sizes="144x144" href={icon144.src} />
+      <link rel="apple-touch-icon" sizes="60x60" href={icon60.src} />
+      <link rel="apple-touch-icon" sizes="120x120" href={icon120.src} />
+      <link rel="apple-touch-icon" sizes="76x76" href={icon76.src} />
       <link rel="apple-touch-icon" sizes="152x152" href={icon152.src} />
       <link rel="apple-touch-icon" sizes="180x180" href={icon180.src} />
-      <link rel="icon" type="image/png" sizes="192x192" href={icon192.src} />
-      <link rel="icon" type="image/png" sizes="32x32" href={icon32.src} />
-      <link rel="icon" type="image/png" sizes="96x96" href={icon96.src} />
-      <link rel="icon" type="image/png" sizes="16x16" href={icon16.src} />
-      {/* <link rel="manifest" href="/manifest.json" /> */}
-
-      <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="msapplication-TileImage" content={iconMS144.src} />
+      <meta name="msapplication-TileColor" content="#FFFFFF" />
+      <meta name="msapplication-TileImage" content={icon144.src} />
+      <meta name="msapplication-config" content="/logo/browserconfig.xml" />
 
       <title>{title}</title>
       <meta name="description" content={description} />

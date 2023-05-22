@@ -20,14 +20,17 @@ const robotoMono = Roboto_Mono({
 export interface CardProps {
   title: string
   description: string
+  link: string
 }
 
 export const Card: FC<CardProps> = props => {
   return (
-    <section className="flex-1 p-4 rounded-lg border-gray-200 border gap-4 flex flex-col bg-[#3c3c3c]">
+    <section className="flex-1 p-4 rounded-lg border-gray-200 border gap-4 flex flex-col bg-[#3c3c3c] col-span-4 md:col-span-2 lg:col-span-1">
       <h2 className="text-4xl">{props.title}</h2>
       <p>{props.description}</p>
-      <RxArrowTopRight className="text-2xl" />
+      <Link href={props.link} target="_blank">
+        <RxArrowTopRight className="text-2xl" />
+      </Link>
     </section>
   )
 }
@@ -39,7 +42,7 @@ const Home: NextPageWithLayout = () => {
       <section className="container w-fit m-auto text-center flex flex-col gap-5 py-12 px-2">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
           Limit-LAB is on a mission to shape <br /> an{' '}
-          <span className="text-blue-600">ai-powered</span> future.
+          <span className="text-blue-600">AI-powered</span> future.
         </h2>
         <p className="text-xl text-gray-400">
           next-generation open source, community-driven prompt-base for
@@ -51,7 +54,7 @@ const Home: NextPageWithLayout = () => {
             <AiOutlineArrowRight className="ml-2 text-lg" />
           </Button>
         </div>
-        <p className="text-gray-400 text-sm">No credit card required.</p>
+        <p className="text-gray-400 text-sm -m-2">No credit card required.</p>
       </section>
       <figure className="flex items-center justify-center bg-blue-600 text-white w-full">
         <p className="container p-6 text-xl lg:text-2xl text-center">
@@ -99,14 +102,26 @@ const Home: NextPageWithLayout = () => {
               </div>
             </div>
           </div>
-          <div className="mt-6 flex gap-8 flex-wrap">
+          <div className="mt-6 gap-8 grid grid-cols-4">
+            <Card
+              title="Promptc"
+              description="promptc is a project that aims to help developers write better prompts, and make prompts 'prompt once, run everywhere'."
+              link="https://github.com/promptc"
+            />
+            <Card
+              title="Promptc Hub"
+              description=""
+              link="https://github.com/limit-lab"
+            />
             <Card
               title="Orkas"
               description="Decentralized MQ implementation with SWIM, CRDT and Limlog. This crate depends on Tokio."
+              link="https://github.com/Limit-LAB/Orkas"
             />
             <Card
               title="Cetacea Protocol"
-              description="The next generation protocol for decentralized communication. it uses Orkas to provide a decentralized distributed network for federated communication."
+              description="The next generation protocol for decentralized communication. Provide a decentralized distributed network for federated communication."
+              link="https://github.com/Limit-LAB/Cetacea-Proto"
             />
           </div>
         </section>
