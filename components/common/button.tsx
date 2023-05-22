@@ -9,7 +9,7 @@ const variants = {
   warning: 'bg-yellow-500 hover:bg-yellow-600 text-white',
   info: 'bg-blue-500 hover:bg-blue-600 text-white',
   light: 'bg-gray-100 hover:bg-gray-200 text-gray-800',
-  dark: 'bg-gray-800 hover:bg-gray-900 text-white',
+  dark: 'bg-gray-800 hover:bg-gray-900 text-white'
 }
 
 type ButtonVariant = keyof typeof variants

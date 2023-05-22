@@ -44,7 +44,7 @@ const LimitSiteHead: FC<LimitSiteHeadProps> = props => {
     type = 'website',
     siteName = 'Limit-LAB',
     creator = '@limit_lab',
-    twitterCard = 'summary',
+    twitterCard = 'summary'
   } = props
   return (
     <Head>

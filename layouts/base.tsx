@@ -8,24 +8,24 @@ import {
   AiOutlineMenu,
   AiOutlineClose,
   AiOutlineTwitter,
-  AiFillGithub,
+  AiFillGithub
 } from 'react-icons/ai'
 import { AnimatePresence, motion } from 'framer-motion'
-import Link from "next/link";
+import Link from 'next/link'
 
 const inter = Inter({
-  subsets: ['latin'],
+  subsets: ['latin']
 })
 
 const navitems = [
   {
     name: 'Translator',
-    link: 'https://translate.limit.dev',
+    link: 'https://translate.limit.dev'
   },
   {
     name: 'promptc',
-    link: 'https://promptc.dev',
-  },
+    link: 'https://promptc.dev'
+  }
   // {
   //   name: 'Careers',
   // },
@@ -38,7 +38,9 @@ export const Header = () => {
       <Image src={logo} alt="Limit Lab" width={60} height={60} />
       <ul className="hidden md:flex text-sm text-gray-700 gap-6 font-medium">
         {navitems.map((item, index) => (
-          <li key={index}><Link href={item.link}>{item.name}</Link></li>
+          <li key={index}>
+            <Link href={item.link}>{item.name}</Link>
+          </li>
         ))}
       </ul>
       <AiOutlineMenu
@@ -59,7 +61,9 @@ export const Header = () => {
             />
             <ul className="flex flex-col text-sm text-gray-700 gap-6 font-medium items-end">
               {navitems.map((item, index) => (
-                <li key={index}><Link href={item.link}>{item.name}</Link></li>
+                <li key={index}>
+                  <Link href={item.link}>{item.name}</Link>
+                </li>
               ))}
             </ul>
             <Button>Start for free</Button>
@@ -80,8 +84,12 @@ const Footer = () => {
           Limit-LAB
         </div>
         <div className="flex gap-4 text-2xl">
-          <Link href={"https://github.com/Limit-LAB"}><AiFillGithub /></Link>
-          <Link href={"https://twitter.com/limit_lab"}><AiOutlineTwitter /></Link>
+          <Link href={'https://github.com/Limit-LAB'}>
+            <AiFillGithub />
+          </Link>
+          <Link href={'https://twitter.com/limit_lab'}>
+            <AiOutlineTwitter />
+          </Link>
         </div>
         <p className="text-xs">
           © {new Date().getFullYear()} Limit-LAB. All rights reserved.
