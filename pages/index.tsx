@@ -28,7 +28,7 @@ export const Card: FC<CardProps> = props => {
     <section className="flex-1 p-4 rounded-lg border-gray-200 border gap-4 flex flex-col bg-[#3c3c3c] col-span-4 md:col-span-2 lg:col-span-1">
       <h2 className="text-4xl">{props.title}</h2>
       <p>{props.description}</p>
-      <Link href={props.link} target="_blank">
+      <Link href={props.link} target="_blank" className='mt-auto'>
         <RxArrowTopRight className="text-2xl" />
       </Link>
     </section>
