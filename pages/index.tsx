@@ -20,14 +20,15 @@ export interface CardProps {
 
 export const Card: FC<CardProps> = props => {
   return (
-    <section
-      onClick={() => window.open(props.link, '_blank')}
-      className="cursor-pointer flex-1 p-4 rounded-lg border-gray-200 border gap-4 flex flex-col bg-[#3c3c3c] col-span-4 md:col-span-2 lg:col-span-1"
-    >
-      <h2 className="text-4xl">{props.title}</h2>
-      <p className="opacity-80">{props.description}</p>
-      <Link href={props.link} target="_blank" className="mt-auto">
-        <RxArrowTopRight className="text-2xl" />
+    <section className="cursor-pointer flex-1 p-4 rounded-lg border-gray-200 border bg-[#3c3c3c] col-span-4 md:col-span-2 lg:col-span-1">
+      <Link
+        href={props.link}
+        target="_blank"
+        className="h-full flex flex-col gap-4"
+      >
+        <h2 className="text-4xl">{props.title}</h2>
+        <p className="opacity-80">{props.description}</p>
+        <RxArrowTopRight className="text-2xl mt-auto" />
       </Link>
     </section>
   )
