@@ -47,7 +47,7 @@ const Home: NextPageWithLayout = () => {
           Next-generation prompt platform. Embracing the LLM era with
           confidence.
         </p>
-        <div className="text-center">
+        <div className="text-center space-x-2">
           <Button className="px-5 py-2.5">
             Coming soon
             {/*<AiOutlineArrowRight className="ml-2 text-lg" />*/}
@@ -55,7 +55,6 @@ const Home: NextPageWithLayout = () => {
           <Link target="_blank" href={'https://translate.limit.dev'}>
             <Button
               className="px-5 py-2.5"
-              style={{ marginLeft: '10px' }}
               variant={'light'}
             >
               Try our Translator

@@ -17,7 +17,6 @@ type ButtonVariant = keyof typeof variants
 export interface ButtonProps extends PropsWithChildren {
   variant?: ButtonVariant
   className?: string
-  style?: React.CSSProperties
   onClick?: () => void
 }
 
@@ -30,7 +29,6 @@ export const Button: FC<ButtonProps> = props => {
         variants[props.variant || 'primary'],
         props.className
       )}
-      style={props.style}
     >
       {props.children}
     </button>
