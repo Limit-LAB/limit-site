@@ -1,0 +1,20 @@
+{
+    "comingSoon": "Coming Soon",
+    "tryTranslator": "Try our Translator",
+    "joinCommunity": "Join our community and contribute to an awesome prompt ecosystem!",
+    "interestedInUs": "Interested in us? Figure out what we are doing.",
+    "viewOnGithub": "View on Github",
+    "titles": {
+        "h1Before": "Our mission is to shape \n an ",
+        "h1Highlight": "AI-powered",
+        "h1After": " future",
+        "h2": "Next-generation prompt platform. Embracing the LLM era with confidence."
+    },
+    "projects": {
+        "promptc": "promptc is a project aiming to help developers focus on prompts instead of writing code. It makes prompts 'prompt once, run everywhere'.",
+        "hub": "Platform for creating, sharing, arranging, evaluating and managing prompts. Revolution the way of Prompt Engineering.",
+        "translator": "Translate texts into different languages with powerful LLM AI. Based on promptc.",
+        "orkas": "Decentralised MQ implementation with SWIM, CRDT and Limlog. This crate depends on Tokio.",
+        "Cetacea": "The next generation protocol for decentralised communication. Provide a decentralised distributed network for federated communication."
+    }
+}
