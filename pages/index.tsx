@@ -48,16 +48,18 @@ const Home: NextPageWithLayout = () => {
           confidence.
         </p>
         <div className="text-center space-x-2">
-          <Button className="px-5 py-2.5">
-            Coming soon
-            {/*<AiOutlineArrowRight className="ml-2 text-lg" />*/}
-          </Button>
+          <Link href={'https://studio.limit.dev'}>
+            <Button className="px-5 py-2.5">
+              Try Limi Studio
+              {/*<AiOutlineArrowRight className="ml-2 text-lg" />*/}
+            </Button>
+          </Link>
           <Link target="_blank" href={'https://translate.limit.dev'}>
             <Button
               className="px-5 py-2.5"
               variant={'light'}
             >
-              Try our Translator
+              LimiTranslator
               {/*<AiOutlineArrowRight className="ml-2 text-lg" />*/}
             </Button>
           </Link>
